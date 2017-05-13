@@ -62,6 +62,7 @@ int main()
     glEnable(GL_DEPTH_TEST);
     
     glEnable(GL_BLEND);
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
@@ -103,12 +104,6 @@ int main()
         }
         
         glfwSwapBuffers(window);
-        /*double yield = (1000.0 / 60 - (glfwGetTime() - lastFrame));
-        printf("yield = %lf\n", yield);
-        if (yield < 0) {
-            yield = 0;
-        }
-        glfwWaitEventsTimeout(yield);*/
     }
 
 

@@ -1,3 +1,4 @@
+
 #include "Scene.h"
 #include "Assets.h"
 #include "Player.h"
@@ -24,7 +25,7 @@ int lastSceneStatus;
 void initScene() {
     lastSceneStatus = NO_STATUS;
 
-    GLOBAL_PLAYER = makePlayer(1.8, 1);
+    GLOBAL_PLAYER = makePlayer(1.8, 0);
     GLOBAL_VIEW_FINDER = makeViewFinder();
 
     board[0] = makeObjectWithTextScaled(SQUARE_SHAPE, ROCK_TEXTURE, SCENE_WIDTH, 0, SCENE_DEPTH, SCENE_WIDTH / 5, SCENE_DEPTH / 5);
@@ -116,7 +117,8 @@ void addBoxToScene(float x, float z, float height, int moveable) {
         return;
     }
 
-    boxes[boxesIdx++] = makeBox(x, z, height, moveable);
+    boxes[boxesIdx] = makeBox(x, z, height, moveable);
+    boxesIdx++;
 }
 
 void addRandomBoxToScene(float height, int moveable) {
@@ -124,7 +126,8 @@ void addRandomBoxToScene(float height, int moveable) {
         return;
     }
 
-    boxes[boxesIdx++] = makeRandomBox(height, moveable);
+    boxes[boxesIdx] = makeRandomBox(height, moveable);
+    boxesIdx++;
 }
 
 void addEnemyToScene() {
@@ -137,7 +140,8 @@ void addEnemyToScene() {
     if (MAX_ENEMIES <= enemiesIdx) {
         return;
     }
-    enemies[enemiesIdx++] = makeEnemy();
+    enemies[enemiesIdx] = makeEnemy();
+    enemiesIdx++;
 }
 
 int findDeadEnemy() {
@@ -165,7 +169,8 @@ void addBulletToScene(Player* shooter) {
         return;
     }
     
-    bullets[bulletsIdx++] = makeBullet(shooter);
+    bullets[bulletsIdx] = makeBullet(shooter);
+    bulletsIdx++;
 }
 
 int findNotFlyingBullet() {

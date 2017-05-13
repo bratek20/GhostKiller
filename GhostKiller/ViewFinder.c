@@ -30,9 +30,9 @@ void drawViewFinder(ViewFinder* vf){
     GLint viewLoc = glGetUniformLocation(program, "view");
     GLint projLoc = glGetUniformLocation(program, "projection");
     // Pass them to the shaders
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, view);
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, (const GLfloat *)view);
     // Note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, projection);
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, (const GLfloat *)projection);
 
     for (int i = 0; i < 4; i++)
         drawObject(vf->rects[i]);

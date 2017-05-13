@@ -13,7 +13,7 @@
 #define BOARD_FALL -0.001f
 #define WALL_HEIGHT 5.0f
 #define WAVE_DESCRIPTION_HEIGHT 2.0f
-#define BULLET_SPEED 40.0f
+#define BULLET_SPEED 30.0f
 #define OBJECT_SHIFT 5.0f
 
 #define MOVE_DURATION 0.05f

@@ -157,8 +157,8 @@ void setPlayerPerspective(Player* player) {
     GLint viewLoc = glGetUniformLocation(program, "view");
     GLint projLoc = glGetUniformLocation(program, "projection");
     // Pass them to the shaders
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, view);
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, projection);
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, (const GLfloat *)view);
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, (const GLfloat *)projection);
 }
 
 void playerShoot(Player* player) {

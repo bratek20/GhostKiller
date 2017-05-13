@@ -94,7 +94,7 @@ void drawObject(Object* object) {
     glBindTexture(GL_TEXTURE_2D, object->texture);
 
     GLint modelLoc = glGetUniformLocation(GLOBAL_PROGRAM, "model");
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, (const GLfloat *)model);
     
     GLint colorLoc = glGetUniformLocation(GLOBAL_PROGRAM, "color");
     GLint coordScaleLoc = glGetUniformLocation(GLOBAL_PROGRAM, "coordScale");
